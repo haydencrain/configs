@@ -1,0 +1,119 @@
+# Add this file to the root of your project.
+# Tools > Options > Text Editor > General > Follow project coding conventions
+
+# EditorConfig aims to keep coding style consistent accross team members and
+# text editors. for more information, see http://editorconfig.org
+
+# For more extensive language support with EditorConfig, download
+# https://marketplace.visualstudio.com/items?itemName=MadsKristensen.EditorConfig
+# (However, visual studio will hang when attempting to add rules that are not documented)
+
+# This file is the top-most EditorConfig file
+root = true
+
+# All Files - Common Rules
+[*]
+charset = utf-8
+end_of_line = crlf
+indent_style = tab
+insert_final_newline = false
+tab_width = 2
+trim_trailing_whitespace = true
+
+# Dotnet Code Style Settings
+# See https://docs.microsoft.com/en-us/visualstudio/ide/editorconfig-code-style-settings-reference
+# See http://kent-boogaart.com/blog/editorconfig-reference-for-c-developers
+
+[*.{cs,vb}]
+# Avoid 'this', unless absolutely necessary
+dotnet_style_qualification_for_field = false:suggestion
+dotnet_style_qualification_for_property = false:suggestion
+dotnet_style_qualification_for_method = false:suggestion
+dotnet_style_qualification_for_event = false:suggestion
+# Use language keywords instead of BCL types
+dotnet_style_predefined_type_for_locals_parameters_members = true:suggestion
+dotnet_style_predefined_type_for_member_access = true:suggestion
+# Expresion level preferences
+dotnet_style_object_initializer = true:suggestion
+dotnet_style_collection_initializer = true:suggestion
+dotnet_style_explicit_tuple_names = true:suggestion
+dotnet_style_coalesce_expression = true:suggestion
+dotnet_style_null_propagation = true:suggestion
+dotnet_style_prefer_inferred_tuple_names = true:suggestion
+dotnet_style_prefer_inferred_anonymous_type_member_names = true:suggestion
+# organise usings
+dotnet_sort_system_directives_first = true
+# Always specify the Visibility
+dotnet_style_require_accessibility_modifiers = always:suggestion
+# _camelCase for internal and private fields (private_internal_fields_prefix_camel_case)
+# NB: attempting to add a rule for static fields (i.e. s_ prefix) conflicts with this rule
+# TODO find a way to enable private fields to be _camelCase, and static fields to be s_variable etc.
+dotnet_naming_rule.private_internal_fields_prefix_camel_case.symbols = private_symbols
+dotnet_naming_symbols.private_symbols.applicable_kinds = *
+dotnet_naming_symbols.private_symbols.applicable_accessibilities = internal,private 
+dotnet_naming_rule.private_internal_fields_prefix_camel_case.style = instance_camel_case
+dotnet_naming_style.instance_camel_case.required_prefix = _
+dotnet_naming_style.instance_camel_case.capitalization = camel_case
+dotnet_naming_rule.private_internal_fields_prefix_camel_case.severity = suggestion
+# prefer objects to be initialized using object intializers when possible
+dotnet_style_object_initializer = true:suggestion
+# prefer to use null-conditional operator when possible
+dotnet_style_coalesce_expression = true:suggestion
+
+# CSharp code style settings:
+[*.cs]
+# Allman style braces - Brace begins on a new line
+csharp_new_line_before_open_brace = all
+csharp_new_line_before_else = true
+csharp_new_line_before_catch = true
+csharp_new_line_before_finally = true
+csharp_new_line_before_members_in_object_initializers = true
+csharp_new_line_before_members_in_anonymous_types = true
+csharp_new_line_between_query_expression_clauses = true
+# Visibility should be the first modifier
+csharp_preferred_modifier_order = public,private,protected,internal,static,extern,new,virtual,abstract,sealed,override,readonly,unsafe,volatile,async:suggestion
+# leave statements and member declarations on different lines.
+csharp_preserve_single_line_statements = false:suggestion
+# use var, only when type is apparent
+csharp_style_var_for_built_in_types = true:suggestion
+csharp_style_var_when_type_is_apparent = true:suggestion
+csharp_style_var_elsewhere = false:suggestion
+# expression bodied members
+csharp_style_expression_bodied_methods = false:none
+csharp_style_expression_bodied_constructors = false:none
+csharp_style_expression_bodied_operators = false:none
+csharp_style_expression_bodied_properties = true:suggestion
+csharp_style_expression_bodied_indexers = true:suggestion
+csharp_style_expression_bodied_accessors = true:suggestion
+# pattern matching
+csharp_style_pattern_matching_over_is_with_cast_check = true:suggestion
+csharp_style_pattern_matching_over_as_with_null_check = true:suggestion
+# inlined variable declarations
+csharp_style_inlined_variable_declaration = true:suggestion
+# expression-level preferences
+csharp_prefer_simple_default_expression = true:suggestion
+csharp_style_deconstructed_variable_declaration = true:suggestion
+csharp_style_pattern_local_over_anonymous_function = true:suggestion
+# "Null" checking preferences
+csharp_style_throw_expression = true:suggestion
+csharp_style_conditional_delegate_call = false:suggestion
+# prefer braces
+csharp_prefer_braces = true:suggestion
+# indentation preferences
+csharp_indent_case_contents = true
+csharp_indent_switch_labels = true
+csharp_indent_labels = no_change
+# spacing preferences
+csharp_space_after_cast = false
+csharp_space_after_keywords_in_control_flow_statements = true
+csharp_space_between_method_declaration_parameter_list_parentheses = false
+csharp_space_between_method_call_parameter_list_parentheses = false
+csharp_space_between_parentheses = false
+# wrapping preferences
+csharp_preserve_single_line_statements = false
+csharp_preserve_single_line_blocks = true
+
+# Visual Basic code style settings:
+[*.vb]
+# specify the visibility (i.e. private string _foo, not string _foo) Visibility should be the first modifier
+visual_basic_preferred_modifier_order = Partial,Default,Private,Protected,Public,Friend,NotOverridable,Overridable,MustOverride,Overloads,Overrides,MustInherit,NotInheritable,Static,Shared,Shadows,ReadOnly,WriteOnly,Dim,Const,WithEvents,Widening,Narrowing,Custom,Async:suggestion
