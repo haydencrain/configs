@@ -1,31 +1,34 @@
 {
-    "defaultSeverity": "warning",
-    "extends": [
-				"tslint-eslint-rules",
-				"tslint-config-airbnb",
-				"tslint-react"
-    ],
-    "jsRules": {},
-    "rules": {
-			"ter-indent": [
-				true,
-				"tab",
-				{ "SwitchCase": 1 }
-			],
-			"max-line-length":false, // use ter-max-len instead
-			"ter-max-len": [
-				true,
-				{
-					"code": 120,
-					"ignoreImports": true,
-					"ignoreStrings": true,
-					"ignoreTemplateLiterals": true,
-					"ignoreUrls": true
-				}
-			],
-			"curly": [true, "as-needed"],
-			"trailing-comma": false,
-			"jsx-boolean-value": false
-		},
-    "rulesDirectory": []
+	"defaultSeverity": "warning",
+	"extends": [
+		"tslint-eslint-rules",
+		"tslint-config-airbnb",
+		"tslint-react"
+	],
+	"jsRules": {},
+	"rules": {
+		"ter-indent": [
+			true,
+			"tab",
+			{
+				"SwitchCase": 1
+			}
+		],
+		"max-line-length": false, // use ter-max-len instead
+		"ter-max-len": [
+			true,
+			{
+				"code": 120,
+				"ignoreImports": true,
+				"ignoreStrings": true,
+				"ignoreTemplateLiterals": true,
+				"ignoreUrls": true
+			}
+		],
+		"curly": [false],
+		"trailing-comma": false,
+		"jsx-boolean-value": false,
+		"jsx-no-multiline-js": false
+	},
+	"rulesDirectory": []
 }
