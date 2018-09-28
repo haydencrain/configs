@@ -75,3 +75,21 @@ If you would like the task to run automatically on the project startup:
 
 	(**Note:** it is also required for the task to define a `label` in order for AutoLaunch to work)
 3. After reloading VS Code, the linting task should run, and the issues will be applied to the `Problems` tab.
+
+## Autoformatting - Prettier
+1. Download the [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) VS Code plugin.
+2. `npm install --save-dev prettier`
+3. Add a `.prettierrc` file to the root folder of your project. current example setup for prettier:
+   ```
+   {
+	"printWidth": 120,
+	"tabWidth": 2,
+	"useTabs": true,
+	"singleQuote": true,
+	"trailingComma": "none",
+	"bracketSpacing": true,
+	"semi": true
+   }
+   ```
+4. If you would like prettier to Autoformat on save, add ` "editor.formatOnSave":true` to your workspace settings.
+
