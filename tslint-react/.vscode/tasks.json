@@ -2,18 +2,10 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"label": "build",
-			"command": "dotnet",
-			"type": "process",
-			"args": [
-					"build",
-					"${workspaceFolder}/Sebir.csproj"
-			],
-			"problemMatcher": "$msCompile"
-		},
-		{
 			"type": "npm",
 			"script": "lint",
+			"label": "npm: lint",
+			"auto": true,
 			"problemMatcher": {
 				"base": "$tslint5",
 				"fileLocation": "relative"
