@@ -7,7 +7,7 @@ Further information can be found [here](https://docs.microsoft.com/en-us/sql/lin
 
 ### Backing up
 ```SQL
-BACKUP DATABASE [ipconnect.ipedge.net] 
+BACKUP DATABASE [<name_of_database>] 
 TO DISK = N'/var/opt/mssql/backup/<name_of_file></name_of_file>.bak' WITH NOFORMAT, NOINIT, NAME = '<name_of_file>', SKIP, NOREWIND, NOUNLOAD, STATS = 10
 ```
 
